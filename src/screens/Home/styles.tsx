@@ -10,23 +10,29 @@ export const FlatList = styled.FlatList``;
 export const ListItemContainer = styled.TouchableOpacity`
   padding: 15px 20px;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
   width: 100%;
 `;
 
-export const TextsContainer = styled.View``;
+export const FavoriteButtonContainer = styled.View`
+  margin-right: 20px;
+`;
+
+export const TextsContainer = styled.View`
+  flex: 1;
+`;
 
 export const Text = styled.Text`
   font-size: 16px;
   color: #FFF;
-  flex: 1;
-  margin-left: 10px;
 `;
 
 export const SecondaryText = styled.Text`
   font-size: 10px;
   color: #ddd;
-  flex: 1;
-  margin-left: 10px;
+`;
+
+export const ItemSeparator = styled.View`
+  height: 2px;
+  background-color: #fff;
 `;
