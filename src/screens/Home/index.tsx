@@ -26,7 +26,7 @@ const Home = ({ navigation, route }) => {
 
   const keyExtractor = (item, index) => (item + index);
 
-  const isFavorite = ((band: Band) => favorites.filter(item => item.id === band.id).length)
+  const isFavorite = ((band: Band) => favorites.find(item => item.id === band.id))
 
   useEffect(() => {
     getBands()

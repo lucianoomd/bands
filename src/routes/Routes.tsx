@@ -3,9 +3,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
 import BandDetails from '../screens/BandDetails';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { store } from '../store/store';
+import store from '../store/store';
 import { Provider } from 'react-redux';
-import ButtonIcon from '../components/ButtonIcon/ButtonIcon';
 
 
 const Stack = createNativeStackNavigator();

@@ -1,5 +1,6 @@
 import API from './API'
 import Band from '../beans/Band'
+import { createAsyncThunk } from '@reduxjs/toolkit'
 
 export default class BandService extends API {
   async getBands() {
@@ -17,11 +18,7 @@ export default class BandService extends API {
     return response
   }
   
-  /*
-    ============================================================
-    ======================= Local data =========================
-    ============================================================
-  */
+  /* ======================= Local data ========================= */
   async saveBandsLocally(bands: Band[]) {
     const result = this.localStorageSet('@Bands', bands)
     return await result
@@ -31,3 +28,13 @@ export default class BandService extends API {
     return await this.localStorageGet('@Bands')
   }
 }
+
+export const getBand = createAsyncThunk(
+  'get/band',
+  async (id) => {
+    const endpoint = `/bands/${id}`
+    const response = await new API().doGet(endpoint)
+
+    return response
+  } 
+)
